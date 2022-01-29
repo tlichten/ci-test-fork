@@ -12,7 +12,7 @@ const run = async (): Promise<void> => {
     // Limit only to when issues are opened (not edited, closed, etc)
     // if (github.context.payload.action !== 'opened') return
 
-    const issue = github.context.payload.issue
+    // const issue = github.context.payload.issue
     // if (!issue) return
 
     const emojiNames = ['leopard']
