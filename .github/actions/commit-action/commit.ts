@@ -127,7 +127,7 @@ const run = async (): Promise<void> => {
 
     // Commit that tree
     // https://developer.github.com/v3/git/commits/#create-a-commit
-    const message = `Update emoji. Fixes #${issue.number}`
+    const message = `Update emoji.`
     const commitResponse = await octokit.git.createCommit({
       owner,
       repo,
