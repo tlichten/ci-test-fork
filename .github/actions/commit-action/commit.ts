@@ -15,7 +15,7 @@ const run = async (): Promise<void> => {
     const issue = github.context.payload.issue
     // if (!issue) return
 
-    const emojiNames = 'leopard'
+    const emojiNames = ['leopard']
     console.log({emojiNames})
 
     // Create the octokit client
