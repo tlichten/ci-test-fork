@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import fetch from 'node-fetch'
-import {GitCreateTreeParamsTree} from '@octokit/rest'
+import {Octokit, GitCreateTreeParamsTree} from 'https://cdn.skypack.dev/@octokit/rest';
 import MarkdownIt from 'markdown-it';
 
 interface TreeEntry {
