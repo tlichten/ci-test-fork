@@ -2,6 +2,7 @@ import * as core from '@actions/core'
 import * as github from '@actions/github'
 import fetch from 'node-fetch'
 import {GitCreateTreeParamsTree} from '@octokit/rest'
+import { MarkdownIt, RuleInline } from 'markdown-it';
 
 interface TreeEntry {
   path?: string
@@ -15,7 +16,6 @@ const run = async (): Promise<void> => {
     const issue = github.context.payload.issue
     if (!issue) return
     
-    var MarkdownIt = require('markdown-it');
     var md = new MarkdownIt();
     var result = md.parse(issue.body);
     console.log(result);
