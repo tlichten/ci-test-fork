@@ -26,14 +26,11 @@ const run = async (): Promise<void> => {
     const [issue_id] = issue.id
     console.log({owner, repo, issue_id})
 
-    const issue_raw = await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
+    const issue_raw = await octokit.rest.issues.get({
       owner,
       repo,
       issue_id,
-      mediaType: {
-        format: 'raw'
-      }
-    })
+    });
     
     let body:string = issue_raw.body || '';
     var md = new MarkdownIt();
