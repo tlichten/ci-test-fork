@@ -14,6 +14,9 @@
     "@types/node": "*",
     "@types/node-fetch": "*",
     "@types/markdown-it": "*",
+    "@octokit/types": "*",
+    "@octokit/core": "*",
+    "@octokit/rest": "*",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
     "eslint": "*",
@@ -28,6 +31,9 @@
   },
   "dependencies": {
     "@types/markdown-it": "*",
+    "@octokit/types": "*",
+    "@octokit/core": "*",
+    "@octokit/rest": "*",
     "node-fetch": "*",
     "markdown-it": "*"
   }
