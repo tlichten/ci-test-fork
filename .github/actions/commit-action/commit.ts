@@ -15,9 +15,9 @@ const run = async (): Promise<void> => {
 
     const issue = github.context.payload.issue
     if (!issue) return
-    
+    let body:string = issue.body || '';
     var md = new MarkdownIt();
-    var result = md.render(issue.body);
+    var result = md.render(body);
     console.log(result);
 
     const emojiNames = ['leaves']
