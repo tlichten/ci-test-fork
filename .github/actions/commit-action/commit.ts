@@ -12,8 +12,13 @@ const run = async (): Promise<void> => {
     // Limit only to when issues are opened (not edited, closed, etc)
     // if (github.context.payload.action !== 'opened') return
 
-    // const issue = github.context.payload.issue
-    // if (!issue) return
+    const issue = github.context.payload.issue
+    if (!issue) return
+    
+    var MarkdownIt = require('markdown-it');
+    var md = new MarkdownIt();
+    var result = md.parse(issue.body);
+    console.log(result);
 
     const emojiNames = ['leaves']
     console.log({emojiNames})
