@@ -17,7 +17,7 @@ const run = async (): Promise<void> => {
     if (!issue) return
     
     var md = new MarkdownIt();
-    var result = md.parse(issue.body);
+    var result = md.render(issue.body);
     console.log(result);
 
     const emojiNames = ['leaves']
