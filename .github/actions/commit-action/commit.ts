@@ -1,7 +1,8 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import fetch from 'node-fetch'
-import {GitCreateTreeParamsTree} from '@octokit/rest'
+import {Octokit} from '@octokit/rest'
+type GitCreateTreeParamsTree = Octokit.GitCreateTreeParamsTree;
 import MarkdownIt from 'markdown-it';
 
 interface TreeEntry {
@@ -10,6 +11,9 @@ interface TreeEntry {
 
 const run = async (): Promise<void> => {
   try {
+    import type { Octokit } from '@octokit/rest';
+
+
     // Limit only to when issues are opened (not edited, closed, etc)
     if (github.context.payload.action !== 'opened') return
 
