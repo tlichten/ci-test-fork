@@ -13,6 +13,7 @@
     "@types/js-yaml": "^3.12.1",
     "@types/node": "^12.7.5",
     "@types/node-fetch": "^2.5.0",
+    "@types/markdown-it": "^12.3.2",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
     "eslint": "^6.3.0",
@@ -22,10 +23,11 @@
     "js-yaml": "^3.13.1",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.6.3",
+    "typescript": "^3.6.3", 
     "markdown-it":"^12.3.2"
   },
   "dependencies": {
+    "@types/markdown-it": "^12.3.2",
     "node-fetch": "^2.6.0",
     "markdown-it":"^12.3.2"
   }
