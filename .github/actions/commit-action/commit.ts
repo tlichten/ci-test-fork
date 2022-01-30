@@ -11,14 +11,10 @@ interface TreeEntry {
 const run = async (): Promise<void> => {
   try {
     // Limit only to when issues are opened (not edited, closed, etc)
-    // if (github.context.payload.action !== 'opened') return
+    if (github.context.payload.action !== 'opened') return
 
     const issue = github.context.payload.issue
     if (!issue) return
-    let body:string = issue.body || '';
-    var md = new MarkdownIt();
-    var result = md.render(body);
-    console.log(result);
 
     const emojiNames = ['leaves']
     console.log({emojiNames})
@@ -27,8 +23,24 @@ const run = async (): Promise<void> => {
     const octokit: github.GitHub = new github.GitHub(process.env['GITHUB_TOKEN'] || '')
     const nwo = process.env['GITHUB_REPOSITORY'] || '/'
     const [owner, repo] = nwo.split('/')
-    console.log({owner, repo})
+    const [issue_id] = issue.id
+    console.log({owner, repo, issue_id})
 
+    const issue_raw = await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
+      owner,
+      repo,
+      issue_id,
+      mediaType: {
+        format: 'raw'
+      }
+    })
+    
+    let body:string = issue_raw.body || '';
+    var md = new MarkdownIt();
+    var result = md.render(body);
+    console.log(result);
+    
+    
     // Grab the emoji
     const githubEmojiResponse = await octokit.emojis.get()
     const githubEmojis: {[name: string]: string} = githubEmojiResponse.data
