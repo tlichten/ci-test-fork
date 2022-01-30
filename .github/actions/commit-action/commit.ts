@@ -11,8 +11,6 @@ interface TreeEntry {
 
 const run = async (): Promise<void> => {
   try {
-    import type { Octokit } from '@octokit/rest';
-
 
     // Limit only to when issues are opened (not edited, closed, etc)
     if (github.context.payload.action !== 'opened') return
