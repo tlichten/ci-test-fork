@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import fetch from 'node-fetch'
-import {Octokit, GitCreateTreeParamsTree} from 'https://cdn.skypack.dev/@octokit/rest';
+import {GitCreateTreeParamsTree} from '@octokit/rest'
 import MarkdownIt from 'markdown-it';
 
 interface TreeEntry {
@@ -30,6 +30,9 @@ const run = async (): Promise<void> => {
       owner,
       repo,
       issue_id,
+      mediaType: {
+        format: "raw",
+      }
     });
     
     let body:string = issue_raw.body || '';
