@@ -34,7 +34,7 @@ const main = async () => {
       repo,
       path: "test.txt",
       content: "content here",
-      message: "update test.txt",
+      message: "update test.txt two",
     });
 
     if (updated) {
