@@ -5,7 +5,7 @@ const {
 // parsing the owner and repo name from GITHUB_REPOSITORY
 const [owner, repo] = GITHUB_REPOSITORY.split('/');
 const repoInfo = { owner, repo };
-const branch = "PR-issue";
+const branch = "master";
 const createBranch = true;
 
 let { Octokit } = require("@octokit/rest");
