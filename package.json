@@ -8,7 +8,7 @@
     "@types/node": "*",
     "@types/node-fetch": "*",
     "@types/markdown-it": "*",
-    "octokit-commit-multiple-files": "*",
+    "@octokit/plugin-create-or-update-text-file": "*",
     "@octokit/types": "*",
     "@octokit/core": "*",
     "@octokit/rest": "*",
@@ -23,6 +23,6 @@
     "@octokit/rest": "*",
     "node-fetch": "*",
     "markdown-it": "*",
-    "octokit-commit-multiple-files": "*"
+    "@octokit/plugin-create-or-update-text-file": "*"
   }
 }
