@@ -11,7 +11,8 @@ const createBranch = true;
 console.log(repoInfo);
 
 
-let { Octokit } = require("@octokit/rest");
+let { Octokit } = require("@octokit/core");
+
 Octokit = Octokit.plugin(require("@octokit/plugin-create-or-update-text-file"));
 const octokit = new Octokit();
 
