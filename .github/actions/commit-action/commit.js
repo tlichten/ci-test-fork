@@ -36,11 +36,12 @@ const main = async () => {
       }
     });
     console.log(issue_raw.data.body);
-    console.log(issue_raw);
-    var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
-    var result = md.parse(issue_raw.data.body);
-    console.log(result);
+    
+    var showdown  = require('showdown'),
+    converter = new showdown.Converter(),
+    text      = issue_raw.data.body,
+    html      = converter.makeHtml(text);
+    console.log(html);
     
     const {
       updated,
