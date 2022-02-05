@@ -39,6 +39,13 @@ const main = async () => {
    
     console.log(issue_raw.data.body_html);
     
+    const cheerio = require('cheerio');
+    
+    const $ = cheerio.load(issue_raw.data.body_html);
+    $('h3').each(function(i, elm) {
+        console.log($(this).text()) 
+    });
+    
     const {
       updated,
       data
