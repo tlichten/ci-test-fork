@@ -34,6 +34,8 @@ body:
       description: Do you require public network access
       options:
         - label: I require public network access
+          id: idaccess
           required: false
         - label: I require a firewall
+          id: idfirewall
           required: false
