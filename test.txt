@@ -1,4 +1,4 @@
-LabelName: sesef
-LabelMemory: 4GB
+LabelName: host-web-server
+LabelMemory: 8GB
 LabelNetworkPublic: I require public network access
 LabelNetworkFirewall: I require a firewall
