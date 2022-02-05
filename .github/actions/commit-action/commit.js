@@ -9,6 +9,7 @@ const branch = "master";
 const createBranch = true;
 
 console.log(repoInfo);
+console.log(GITHUB_TOKEN);
 
 
 const { Octokit } = require("@octokit/core");
@@ -18,7 +19,7 @@ const {
 } = require("@octokit/plugin-create-or-update-text-file");
 
 const MyOctokit = Octokit.plugin(createOrUpdateTextFile);
-const octokit = new MyOctokit();
+const octokit = new MyOctokit({auth: GITHUB_TOKEN});
 
 
 const core = require('@actions/core');
