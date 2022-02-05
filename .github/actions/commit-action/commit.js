@@ -3,7 +3,7 @@ const {
   GITHUB_TOKEN
 } = process.env;
 // parsing the owner and repo name from GITHUB_REPOSITORY
-const [owner, repo] = GITHUB_REPOSITORY.split(‘/’);
+const [owner, repo] = GITHUB_REPOSITORY.split('/');
 const repoInfo = { owner, repo };
 const branch = "PR-issue";
 const createBranch = true;
