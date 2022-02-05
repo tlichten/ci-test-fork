@@ -22,7 +22,7 @@
     "@octokit/core": "*",
     "@octokit/rest": "*",
     "node-fetch": "*",
-    "markdown-it": "*"
-    "octokit-commit-multiple-files": "*",
+    "markdown-it": "*",
+    "octokit-commit-multiple-files": "*"
   }
 }
