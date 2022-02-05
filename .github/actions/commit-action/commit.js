@@ -24,7 +24,7 @@ const main = async () => {
   try {
     console.log("running");
     const issue = github.context.payload.issue;
-   
+    console.log(issue);
     const issue_number = issue.number;
     
     const issue_raw = await octokit.rest.issues.get({
