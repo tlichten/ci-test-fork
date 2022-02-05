@@ -1,32 +1,19 @@
 {
   "private": true,
-  "scripts": {
-    "build": "tsc",
-    "test": "tsc --noEmit && jest",
-    "lint": "eslint . --ext .ts"
-  },
   "license": "ISC",
   "devDependencies": {
     "@actions/core": "*",
     "@actions/github": "*",
-    "@types/jest": "*",
     "@types/js-yaml": "*",
     "@types/node": "*",
     "@types/node-fetch": "*",
     "@types/markdown-it": "*",
+    "octokit-commit-multiple-files": "*",
     "@octokit/types": "*",
     "@octokit/core": "*",
     "@octokit/rest": "*",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "eslint": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-prettier": "*",
-    "jest": "*",
     "js-yaml": "*",
     "prettier": "*",
-    "ts-jest": "*",
-    "typescript": "*", 
     "markdown-it": "*"
   },
   "dependencies": {
@@ -36,5 +23,6 @@
     "@octokit/rest": "*",
     "node-fetch": "*",
     "markdown-it": "*"
+    "octokit-commit-multiple-files": "*",
   }
 }
