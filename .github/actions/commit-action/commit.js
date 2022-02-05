@@ -28,12 +28,12 @@ const main = async () => {
 
    
     console.log("running issue get");
-    
+    const issue_number = issue.id;
     
     const issue_raw = await octokit.rest.issues.get({
       owner,
       repo,
-      issue_number: issue.id,
+      issue_number: issue_number,
       mediaType: {
         format: "raw",
       }
