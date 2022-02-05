@@ -39,17 +39,13 @@ const main = async () => {
     const cheerio = require('cheerio');
     
     const $ = cheerio.load(issue_raw.data.body_html);
+    let res = {};
     $('h3').each(function(i, elm) {
         console.log($(this).text());
-        console.log($(this).next().text());
+        res[$(this).text().trim()] = $(this).next().text().trim();
     });
     
-    const tests = $("h3").map(function () {
-      return {
-        $(this).text().trim(): $(this).next().text().trim()
-      } }).toArray();
-
-    console.log(tests);
+    console.log(res);
     
     const {
       updated,
