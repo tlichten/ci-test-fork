@@ -8,8 +8,13 @@ const repoInfo = { owner, repo };
 const branch = "master";
 const createBranch = true;
 
-let { Octokit } = require("@octokit/rest");
-Octokit = Octokit.plugin(require("octokit-commit-multiple-files"));
+console.log(repoInfo);
+
+const { Octokit } = require("@octokit/core");
+const {
+  createOrUpdateTextFile,
+  composeCreateOrUpdateTextFile,
+} = require("@octokit/plugin-create-or-update-text-file");
 
 const octokit = new Octokit();
 
@@ -18,20 +23,22 @@ const github = require('@actions/github');
 
 const main = async () => {
   try {
-    const commits = await octokit.rest.repos.createOrUpdateFiles({
-      owner,
-      repo,
-      branch,
-      createBranch,
-      changes: [
-        {
-          message: "This is a separate commit",
-          files: {
-            "second.md": "Where should we go today?",
-          },
-        },
-      ],
+    const {
+      updated,
+      data: { commit },
+    } = await octokit.createOrUpdateTextFile({
+      owner: owner,
+      repo: repo,
+      path: "test.txt",
+      content: "content here",
+      message: "update test.txt",
     });
+
+    if (updated) {
+      console.log("test.txt updated via %s", data.commit.html_url);
+    } else {
+      console.log("test.txt already up to date");
+    }
   } catch (error) {
       core.setFailed(error.message);
   }
