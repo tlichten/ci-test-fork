@@ -14,6 +14,7 @@
     "@octokit/rest": "*",
     "js-yaml": "*",
     "prettier": "*",
+    "yaml": "*",
     "cheerio": "*"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "@octokit/core": "*",
     "@octokit/rest": "*",
     "node-fetch": "*",
+    "yaml": "*",
     "cheerio": "*",
     "@octokit/plugin-create-or-update-text-file": "*"
   }
