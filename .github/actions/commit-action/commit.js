@@ -24,18 +24,9 @@ const main = async () => {
   try {
     console.log("running");
     const issue = github.context.payload.issue;
-    if (!issue) return;
+    console.log(issue);
 
-    const [issue_id] = issue.id;
-    const issue_raw = await octokit.rest.issues.get({
-      owner,
-      repo,
-      issue_id,
-      mediaType: {
-        format: "raw",
-      }
-    });
-    console.log(issue_raw);
+ 
     
     const {
       updated,
