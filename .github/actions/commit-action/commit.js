@@ -26,12 +26,14 @@ const main = async () => {
     const issue = github.context.payload.issue;
     console.log(issue);
 
-    const [issue_id] = issue.id;
+   
     console.log("running issue get");
+    
+    
     const issue_raw = await octokit.rest.issues.get({
       owner,
       repo,
-      issue_id,
+      issue.id,
       mediaType: {
         format: "raw",
       }
