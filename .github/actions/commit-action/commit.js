@@ -23,11 +23,8 @@ const github = require('@actions/github');
 const main = async () => {
   try {
     console.log("running");
-    issue = github.context.payload.issue;
-    console.log(issue);
-
+    const issue = github.context.payload.issue;
    
-    console.log("running issue get");
     const issue_number = issue.number;
     
     const issue_raw = await octokit.rest.issues.get({
@@ -38,7 +35,11 @@ const main = async () => {
         format: "raw",
       }
     });
-    console.log(issue_raw);
+    console.log(issue_raw.body);
+    var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
+    var result = md.parse(issue_raw.body);
+    console.log(result);
     
     const {
       updated,
