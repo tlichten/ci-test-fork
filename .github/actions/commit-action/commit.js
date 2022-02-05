@@ -6,7 +6,7 @@ const {
 // parsing the owner and repo name from GITHUB_REPOSITORY
 const [owner, repo] = GITHUB_REPOSITORY.split('/');
 
-const { Octokit } = require("@octokit/core");
+const { Octokit } = require("@octokit/rest");
 const {
   createOrUpdateTextFile,
   composeCreateOrUpdateTextFile,
@@ -26,7 +26,17 @@ const main = async () => {
     const issue = github.context.payload.issue;
     console.log(issue);
 
- 
+    const [issue_id] = issue.id;
+    console.log("running issue get");
+    const issue_raw = await octokit.rest.issues.get({
+      owner,
+      repo,
+      issue_id,
+      mediaType: {
+        format: "raw",
+      }
+    });
+    console.log(issue_raw);
     
     const {
       updated,
