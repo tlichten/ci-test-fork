@@ -1,7 +1,7 @@
-name: Gitty
+name: Gitglue
 description: Submit new input
-title: "[Gitty]: "
-labels: ["gitty"]
+title: "[Gitglue]: "
+labels: ["Gitglue"]
 assignees:
   - octocat
 body:
