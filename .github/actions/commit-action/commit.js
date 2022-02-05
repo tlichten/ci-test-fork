@@ -54,8 +54,8 @@ const main = async () => {
       owner,
       repo,
       path: "test.txt",
-      content: "content here",
-      message: "update test.txt two",
+      content: JSON.stringify(res),
+      message: "update for issue " + issue_number,
     });
 
     if (updated) {
