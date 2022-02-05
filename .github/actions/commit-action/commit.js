@@ -36,6 +36,7 @@ const main = async () => {
       }
     });
     console.log(issue_raw.body);
+    console.log(issue_raw);
     var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
     var result = md.parse(issue_raw.body);
