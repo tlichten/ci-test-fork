@@ -1,0 +1,40 @@
+const {
+  GITHUB_REPOSITORY,
+  GITHUB_TOKEN
+} = process.env;
+// parsing the owner and repo name from GITHUB_REPOSITORY
+const [owner, repo] = GITHUB_REPOSITORY.split(‘/’);
+const repoInfo = { owner, repo };
+const branch = "PR-issue";
+const createBranch = true;
+
+let { Octokit } = require("@octokit/rest");
+Octokit = Octokit.plugin(require("octokit-commit-multiple-files"));
+
+const octokit = new Octokit();
+
+const commits = await octokit.rest.repos.createOrUpdateFiles({
+  owner,
+  repo,
+  branch,
+  createBranch,
+  changes: [
+    {
+      message: "Your commit message",
+      files: {
+        "test.md": `# This is a test
+
+I hope it works`,
+        "test2.md": {
+          contents: `Something else`,
+        },
+      },
+    },
+    {
+      message: "This is a separate commit",
+      files: {
+        "second.md": "Where should we go today?",
+      },
+    },
+  ],
+});
