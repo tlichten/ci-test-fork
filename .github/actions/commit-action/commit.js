@@ -23,7 +23,7 @@ const github = require('@actions/github');
 const main = async () => {
   try {
     console.log("running");
-    const issue = github.context.payload.issue;
+    issue = github.context.payload.issue;
     console.log(issue);
 
    
@@ -33,7 +33,7 @@ const main = async () => {
     const issue_raw = await octokit.rest.issues.get({
       owner,
       repo,
-      issue.id,
+      issue_number: issue.id,
       mediaType: {
         format: "raw",
       }
