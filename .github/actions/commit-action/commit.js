@@ -32,16 +32,12 @@ const main = async () => {
       repo,
       issue_number: issue_number,
       mediaType: {
-        format: "full",
+        format: "html",
       }
     });
     console.log(issue_raw.data);
-    
-    var showdown  = require('showdown'),
-    converter = new showdown.Converter();
-    text      = issue_raw.data.body;
-    html      = converter.makeHtml(text);
-    console.log(html);
+   
+    console.log(issue_raw.data.body_html);
     
     const {
       updated,
