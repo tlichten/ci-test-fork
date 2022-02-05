@@ -1,1 +1,4 @@
-{"LabelName":"sefefs","LabelMemory":"4GB","LabelNetworkPublic":"I require public network access","LabelNetworkFirewall":"I require a firewall"}
+LabelName: sesef
+LabelMemory: 4GB
+LabelNetworkPublic: I require public network access
+LabelNetworkFirewall: I require a firewall
