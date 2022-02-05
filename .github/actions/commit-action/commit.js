@@ -28,8 +28,7 @@ const github = require('@actions/github');
 const main = async () => {
   try {
     const {
-      updated,
-      data: { commit },
+      updated
     } = await octokit.createOrUpdateTextFile({
       owner,
       repo,
