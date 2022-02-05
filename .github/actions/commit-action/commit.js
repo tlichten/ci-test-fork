@@ -13,28 +13,36 @@ Octokit = Octokit.plugin(require("octokit-commit-multiple-files"));
 
 const octokit = new Octokit();
 
-const commits = await octokit.rest.repos.createOrUpdateFiles({
-  owner,
-  repo,
-  branch,
-  createBranch,
-  changes: [
-    {
-      message: "Your commit message",
-      files: {
-        "test.md": `# This is a test
+const core = require('@actions/core');
+const github = require('@actions/github');
 
-I hope it works`,
-        "test2.md": {
-          contents: `Something else`,
+const main = async () => {
+
+  const commits = await octokit.rest.repos.createOrUpdateFiles({
+    owner,
+    repo,
+    branch,
+    createBranch,
+    changes: [
+      {
+        message: "Your commit message",
+        files: {
+          "test.md": `# This is a test
+
+  I hope it works`,
+          "test2.md": {
+            contents: `Something else`,
+          },
         },
       },
-    },
-    {
-      message: "This is a separate commit",
-      files: {
-        "second.md": "Where should we go today?",
+      {
+        message: "This is a separate commit",
+        files: {
+          "second.md": "Where should we go today?",
+        },
       },
-    },
-  ],
-});
+    ],
+  });
+};
+
+main();
