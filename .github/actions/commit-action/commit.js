@@ -12,7 +12,7 @@ console.log(repoInfo);
 
 
 let { Octokit } = require("@octokit/rest");
-Octokit = Octokit.plugin(require("createOrUpdateTextFile"));
+Octokit = Octokit.plugin(require("@octokit/plugin-create-or-update-text-file"));
 const octokit = new Octokit();
 
 const core = require('@actions/core');
