@@ -24,7 +24,7 @@ const main = async () => {
   try {
     console.log("running");
     const issue = github.context.payload.issue;
-    console.log(issue);
+
     const issue_number = issue.number;
     
     const issue_raw = await octokit.rest.issues.get({
@@ -35,9 +35,6 @@ const main = async () => {
         format: "html",
       }
     });
-    console.log(issue_raw.data);
-   
-    console.log(issue_raw.data.body_html);
     
     const cheerio = require('cheerio');
     
