@@ -30,8 +30,8 @@ const main = async () => {
       updated,
       data: { commit },
     } = await octokit.createOrUpdateTextFile({
-      owner: owner,
-      repo: repo,
+      owner,
+      repo,
       path: "test.txt",
       content: "content here",
       message: "update test.txt",
