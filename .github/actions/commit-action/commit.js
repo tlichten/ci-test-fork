@@ -44,6 +44,13 @@ const main = async () => {
         console.log($(this).next().text());
     });
     
+    const tests = $("h3").map(function () {
+      return {
+        $(this).text().trim(): $(this).next().text().trim()
+      } }).toArray();
+
+    console.log(tests);
+    
     const {
       updated,
       data
