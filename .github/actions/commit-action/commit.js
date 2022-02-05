@@ -46,7 +46,10 @@ const main = async () => {
     });
     
     console.log(res);
-    
+    const YAML = require('yaml');
+
+    const doc = new YAML.Document();
+    doc.contents = res;
     const {
       updated,
       data
@@ -54,7 +57,7 @@ const main = async () => {
       owner,
       repo,
       path: "test.txt",
-      content: JSON.stringify(res),
+      content: doc.toString(),
       message: "update for issue " + issue_number,
     });
 
