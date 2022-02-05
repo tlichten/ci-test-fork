@@ -28,14 +28,18 @@ body:
     validations:
       required: true
   - type: checkboxes
-    id: idnetwork
+    id: idnetworkpublic
     attributes:
-      label: LabelNetwork
+      label: LabelNetworkPublic
       description: Do you require public network access
       options:
         - label: I require public network access
-          id: idaccess
           required: false
+    - type: checkboxes
+    id: idnetworkfireall
+    attributes:
+      label: LabelNetworkFirewall
+      description: Do you require public network access
+      options:
         - label: I require a firewall
-          id: idfirewall
           required: false
