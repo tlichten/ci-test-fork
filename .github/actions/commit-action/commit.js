@@ -17,32 +17,24 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 const main = async () => {
-
-  const commits = await octokit.rest.repos.createOrUpdateFiles({
-    owner,
-    repo,
-    branch,
-    createBranch,
-    changes: [
-      {
-        message: "Your commit message",
-        files: {
-          "test.md": `# This is a test
-
-  I hope it works`,
-          "test2.md": {
-            contents: `Something else`,
+  try {
+    const commits = await octokit.rest.repos.createOrUpdateFiles({
+      owner,
+      repo,
+      branch,
+      createBranch,
+      changes: [
+        {
+          message: "This is a separate commit",
+          files: {
+            "second.md": "Where should we go today?",
           },
         },
-      },
-      {
-        message: "This is a separate commit",
-        files: {
-          "second.md": "Where should we go today?",
-        },
-      },
-    ],
-  });
+      ],
+    });
+  } catch (error) {
+      core.setFailed(error.message);
+  }
 };
 
 main();
