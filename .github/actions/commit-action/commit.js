@@ -35,11 +35,11 @@ const main = async () => {
         format: "raw",
       }
     });
-    console.log(issue_raw.body);
+    console.log(issue_raw.data.body);
     console.log(issue_raw);
     var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
-    var result = md.parse(issue_raw.body);
+    var result = md.parse(issue_raw.data.body);
     console.log(result);
     
     const {
