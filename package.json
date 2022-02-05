@@ -14,7 +14,7 @@
     "@octokit/rest": "*",
     "js-yaml": "*",
     "prettier": "*",
-    "markdown-it": "*"
+    "showdown": "*"
   },
   "dependencies": {
     "@types/markdown-it": "*",
@@ -22,7 +22,7 @@
     "@octokit/core": "*",
     "@octokit/rest": "*",
     "node-fetch": "*",
-    "markdown-it": "*",
+    "showdown": "*",
     "@octokit/plugin-create-or-update-text-file": "*"
   }
 }
