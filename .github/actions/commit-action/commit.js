@@ -38,9 +38,9 @@ const main = async () => {
     console.log(issue_raw.data.body);
     
     var showdown  = require('showdown'),
-    converter = new showdown.Converter(),
+    converter = new showdown.Converter();
     converter.setFlavor('github');
-    text      = issue_raw.data.body,
+    text      = issue_raw.data.body;
     html      = converter.makeHtml(text);
     console.log(html);
     
