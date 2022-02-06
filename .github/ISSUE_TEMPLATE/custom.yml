@@ -12,7 +12,7 @@ body:
   - type: input
     id: idname
     attributes:
-      label: LabelName
+      label: Name
       description: Define the name of your VM
       placeholder: host-web-serv
     validations:
@@ -20,7 +20,7 @@ body:
   - type: dropdown
     id: idmemory
     attributes:
-      label: LabelMemory
+      label: Memory
       description: How much memory does your VM need?
       options:
         - 4GB
@@ -30,7 +30,7 @@ body:
   - type: checkboxes
     id: idnetworkpublic
     attributes:
-      label: LabelNetworkPublic
+      label: NetworkPublic
       description: Do you require public network access
       options:
         - label: I require public network access
@@ -38,8 +38,16 @@ body:
   - type: checkboxes
     id: idnetworkfireall
     attributes:
-      label: LabelNetworkFirewall
+      label: NetworkFirewall
       description: Do you require public network access
       options:
         - label: I require a firewall
           required: false
+  - type: textarea
+    id: iddescription
+    attributes:
+      label: Description
+      description: Please provide a description
+      placeholder: ...
+    validations:
+      required: true
