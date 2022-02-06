@@ -1,4 +1,4 @@
-LabelName: host-web-server
-LabelMemory: 8GB
+LabelName: "\"%'$'``</script>"
+LabelMemory: 4GB
 LabelNetworkPublic: I require public network access
 LabelNetworkFirewall: I require a firewall
