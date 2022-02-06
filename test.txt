@@ -1,4 +1,5 @@
-LabelName: "\"%'$'``</script>"
-LabelMemory: 4GB
-LabelNetworkPublic: I require public network access
-LabelNetworkFirewall: I require a firewall
+Name: my-machine
+Memory: 4GB
+NetworkPublic: I require public network access
+NetworkFirewall: I require a firewall
+Description: require public network access
