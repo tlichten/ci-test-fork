@@ -1,8 +1,8 @@
-Name: nat
+Name: test
 Memory: 4GB
 NetworkPublic:
-  I require public network access: true
+  I require public network access: false
 NetworkFirewall:
-  I require a firewall: false
-  I require a nat gateway: true
-Description: nat
+  I require a firewall: true
+  I require a nat gateway: false
+Description: test
