@@ -48,8 +48,9 @@ const main = async () => {
           const value = $(this).next().text().trim();
           res[label] = value;
         } else {
-           $(this).('li').each(function(i, elm) {
+           $(this).children('li').each(function(i, elm) {
             console.log($(this).text());
+            console.log(elm);
            }
         }
     });
