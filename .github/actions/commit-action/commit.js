@@ -32,7 +32,7 @@ const main = async () => {
       repo,
       issue_number: issue_number,
       mediaType: {
-        format: "json",
+        format: "html",
       }
     });
     
