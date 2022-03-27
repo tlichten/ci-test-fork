@@ -51,7 +51,7 @@ const main = async () => {
            $(this).children('li').each(function(i, elm) {
             console.log($(this).text());
             console.log(elm);
-           }
+           });
         }
     });
     
