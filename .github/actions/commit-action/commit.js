@@ -56,9 +56,9 @@ const main = async () => {
           let resList = {};
            siblingContent.children('li').each(function(i, elm) {
             const label = $(this).text().trim();
-            console.log($(elm).children('input').first().attr('checked'));
-            resList[label] = "";
-            console.log(elm);
+            if ($(elm).children('input').first().attr('checked'))
+              resList[label] = true;
+             else resList[label] = false;
            });
         }
     });
