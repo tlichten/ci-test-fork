@@ -32,9 +32,11 @@ const main = async () => {
       repo,
       issue_number: issue_number,
       mediaType: {
-        format: "html",
+        format: "json",
       }
     });
+    
+    console.log(issue_raw);
     
     const cheerio = require('cheerio');
     
