@@ -60,6 +60,7 @@ const main = async () => {
               resList[label] = true;
              else resList[label] = false;
            });
+          res[label] = resList;
         }
     });
     
