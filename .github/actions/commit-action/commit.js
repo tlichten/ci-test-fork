@@ -43,8 +43,15 @@ const main = async () => {
     const $ = cheerio.load(issue_raw.data.body_html);
     let res = {};
     $('h3').each(function(i, elm) {
-        console.log($(this).text());
-        res[$(this).text().trim()] = $(this).next().text().trim();
+        const label = $(this).text().trim();
+        if ($(this).next().html() === 'Paragraph') {
+          const value = $(this).next().text().trim();
+          res[label] = value;
+        } else {
+           $(this).('li').each(function(i, elm) {
+            console.log($(this).text());
+           }
+        }
     });
     
     console.log(res);
