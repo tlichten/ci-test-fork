@@ -46,7 +46,7 @@ const main = async () => {
         const label = $(this).text().trim();
         console.log('Processing ' + label);
         const siblingContent = $(this).next();
-        if (!!siblingContent.tagName?.match(/^p$/)) {
+        if (!!siblingContent.tagName.match(/^p$/)) {
           const value = siblingContent.text().trim();
           console.log('Paragraph ' + value);
           res[label] = value;
