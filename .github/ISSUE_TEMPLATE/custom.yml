@@ -43,6 +43,8 @@ body:
       options:
         - label: I require a firewall
           required: false
+        - label: I require a nat gateway
+          required: false 
   - type: textarea
     id: iddescription
     attributes:
