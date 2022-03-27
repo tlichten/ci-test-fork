@@ -1,3 +1,7 @@
-Name: check
+Name: list
 Memory: 4GB
-Description: check
+NetworkPublic:
+  I require public network access: true
+NetworkFirewall:
+  I require a firewall: false
+Description: list
