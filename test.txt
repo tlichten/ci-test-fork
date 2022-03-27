@@ -1,7 +1,8 @@
-Name: list
+Name: nat
 Memory: 4GB
 NetworkPublic:
   I require public network access: true
 NetworkFirewall:
   I require a firewall: false
-Description: list
+  I require a nat gateway: true
+Description: nat
