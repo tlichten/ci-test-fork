@@ -45,14 +45,15 @@ const main = async () => {
     $('h3').each(function(i, elm) {
         const label = $(this).text().trim();
         console.log('Processing ' + label);
-        if ($(this).next().html() === 'Paragraph') {
-          const value = $(this).next().text().trim();
+        const siblingContent = $(this).next();
+        if (!!siblingContent.tagName?.match(/^p$/)) {
+          const value = siblingContent.text().trim();
           console.log('Paragraph ' + value);
           res[label] = value;
         } else {
           console.log('List');
-           $(this).children('li').each(function(i, elm) {
-             console.log('List Item');
+           siblingContent.children('li').each(function(i, elm) {
+            console.log('List Item');
             console.log($(this).text());
             console.log(elm);
            });
