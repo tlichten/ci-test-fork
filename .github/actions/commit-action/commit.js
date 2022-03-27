@@ -46,15 +46,18 @@ const main = async () => {
         const label = $(this).text().trim();
         console.log('Processing ' + label);
         const siblingContent = $(this).next();
+        
         if (siblingContent.get(0).tagName.match(/^p$/)) {
+          // single value 
           const value = siblingContent.text().trim();
-          console.log('Paragraph ' + value);
           res[label] = value;
         } else {
-          console.log('List');
+          // value list
+          let resList = {};
            siblingContent.children('li').each(function(i, elm) {
-            console.log('List Item');
-            console.log($(this).text());
+            const label = $(this).text().trim();
+            console.log($(elm).children('input').first().attr('checked'));
+            resList[label] = "";
             console.log(elm);
            });
         }
