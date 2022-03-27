@@ -1,5 +1,5 @@
-Name: html
+Name: checkbox
 Memory: 4GB
 NetworkPublic: I require public network access
 NetworkFirewall: I require a firewall
-Description: html
+Description: checkbox
